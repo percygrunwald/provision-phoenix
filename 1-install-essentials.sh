@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Add Erlang Solutions repo
-wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && \
-sudo dpkg -i erlang-solutions_1.0_all.deb
+wget -P ~ https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && \
+sudo dpkg -i ~/erlang-solutions_1.0_all.deb
 
 # Update repos and upgrade
 sudo apt-get update
@@ -15,9 +15,9 @@ libyaml-dev libsqlite3-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev \
 python-software-properties libffi-dev \
 apt-transport-https ca-certificates \
 git imagemagick libgmp3-dev \
-postgresql-9.4 \
+postgresql-9.3 \
 nodejs esl-erlang elixir inotify-tools
 
 # Install Phoenix
-mix local.hex
-mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+yes | mix local.hex
+yes | mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
